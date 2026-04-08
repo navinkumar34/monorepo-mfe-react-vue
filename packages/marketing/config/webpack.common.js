@@ -1,3 +1,6 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { plugins } = require('../../container/config/webpack.common');
+
 module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json']
@@ -21,5 +24,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html'
+        })
+    ]
 }
